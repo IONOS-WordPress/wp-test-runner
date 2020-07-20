@@ -1,0 +1,26 @@
+name: PHP Composer
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 * * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Prepare
+      run: php prepare.php
+
+    - name: Test
+      run: php test.php
+
+    - name: Report
+      run: php report.php
+
+    - name: Cleanup
+      run: php cleanup.php
