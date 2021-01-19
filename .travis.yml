@@ -17,5 +17,6 @@ after_script:
   - php cleanup.php
 
 before_install:
+  - nvm install lts/*
   - npm install -g npm@latest
   - npm install -g grunt-cli
