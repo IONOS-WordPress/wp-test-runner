@@ -40,7 +40,6 @@ function check_required_env( $check_db = true ) {
  * @param array $operations
  */
 function perform_operations( $operations ) {
-	$return_code = 0;
 	foreach( $operations as $operation ) {
 		log_message( $operation );
 		passthru( $operation, $return_code );
