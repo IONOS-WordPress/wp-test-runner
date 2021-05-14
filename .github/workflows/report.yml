@@ -1,9 +1,13 @@
 name: Test
 
 on:
+  push:
+    branches:
+      - master
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '0 * * * *'
+  pull_request:
 
 jobs:
   # Tests the PHPUnit test runner.
