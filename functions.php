@@ -44,7 +44,7 @@ function perform_operations( $operations ) {
 		log_message( $operation );
 		passthru( $operation, $return_code );
 		if ( 0 !== $return_code ) {
-			//error_message( 'Failed to perform operation.' );
+			error_message( 'Failed to perform operation.' );
 		}
 	}
 }
