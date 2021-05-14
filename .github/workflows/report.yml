@@ -28,6 +28,16 @@ jobs:
 
     env: # Or as an environment variable
       WPT_PREPARE_DIR: ${{ secrets.WPT_PREPARE_DIR }}
+      WPT_TEST_DIR: ${{ secrets.WPT_TEST_DIR }}
+      WPT_REPORT_API_KEY: ${{ secrets.WPT_REPORT_API_KEY }}
+      # db settings
+      WPT_DB_NAME: ${{ secrets.WPT_DB_NAME }}
+      WPT_DB_USER: ${{ secrets.WPT_DB_USER }}
+      WPT_DB_PASSWORD: ${{ secrets.WPT_DB_PASSWORD }}
+      WPT_DB_HOST: ${{ secrets.WPT_DB_HOST }}
+      # ssh settings
+      WPT_SSH_CONNECT: ${{ secrets.WPT_SSH_CONNECT }}
+      WPT_SSH_PRIVATE_KEY_BASE64: ${{ secrets.WPT_SSH_PRIVATE_KEY_BASE64 }}
 
     steps:
       - name: Cancel previous runs of this workflow (pull requests only)
