@@ -21,6 +21,7 @@ $WPT_DEBUG = getenv( 'WPT_DEBUG' );
 $WPT_SSH_PRIVATE_KEY_BASE64 = getenv( 'WPT_SSH_PRIVATE_KEY_BASE64' );
 if ( ! empty( $WPT_SSH_PRIVATE_KEY_BASE64 ) ) {
 	log_message( 'Securely extracting WPT_SSH_PRIVATE_KEY_BASE64 into ~/.ssh/id_rsa' );
+	mkdir( getenv( 'HOME' ) . '/.ssh', 600, true );
 	file_put_contents( getenv( 'HOME' ) . '/.ssh/id_rsa', base64_decode( $WPT_SSH_PRIVATE_KEY_BASE64 ) );
 	perform_operations( array(
 		'chmod 600 ~/.ssh/id_rsa',
