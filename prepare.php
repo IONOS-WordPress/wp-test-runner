@@ -26,7 +26,7 @@ if ( ! empty( $WPT_SSH_PRIVATE_KEY_BASE64 ) ) {
 	perform_operations( array(
 		'chmod 600 ~/.ssh/id_rsa',
 		'ssh-agent -s',
-		'ssh-add ~/.ssh/id_rsa',
+		'ssh-add',
 		'ssh -q ' . $WPT_SSH_OPTIONS . ' ' . escapeshellarg( $WPT_SSH_CONNECT ) . ' wp cli info',
 	) );
 }
