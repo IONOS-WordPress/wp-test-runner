@@ -1,4 +1,4 @@
-ame: WordPress PHPUnit tests
+name: WordPress PHPUnit tests
 
 on:
   # The workflow should be run on a schedule using the 'schedule' event trigger.
