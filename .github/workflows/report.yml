@@ -9,7 +9,7 @@ on:
   # but every 3-6 hours is also helpful. Times are in UTC.
    schedule:
      # By default, the workflow will run every hour.
-     # - cron:  '0 * * * *'
+     - cron:  '0 * * * *'
      # Every 3 hours.
      # - cron:  '0 0/3 * * *'
      # Every 6 hours.
