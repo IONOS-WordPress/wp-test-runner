@@ -48,7 +48,7 @@ $results = process_junit_xml( $xml );
 $env = '';
 if ( file_exists( $WPT_PREPARE_DIR . '/env.json' ) ) {
 	$env = file_get_contents( $WPT_PREPARE_DIR . '/env.json' );
-} elseif ( $WPT_PREPARE_DIR === $WPT_TEST_DIR ) {
+} else {
 	$env = json_encode( get_env_details(), JSON_PRETTY_PRINT );
 }
 
