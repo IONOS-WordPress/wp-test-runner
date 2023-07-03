@@ -7,6 +7,7 @@ on:
   #
   # Below are some options for different schedules. Running the tests every hour is recommended,
   # but every 3-6 hours is also helpful. Times are in UTC.
+   workflow_dispatch:
    schedule:
      # By default, the workflow will run every hour.
      - cron:  '0 * * * *'
