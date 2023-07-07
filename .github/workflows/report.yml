@@ -10,7 +10,7 @@ on:
    workflow_dispatch:
    schedule:
      # By default, the workflow will run every hour.
-     - cron:  '0 * * * *'
+     - cron:  '0 */3 * * *'
      # Every 3 hours.
      # - cron:  '0 0/3 * * *'
      # Every 6 hours.
