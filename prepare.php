@@ -61,14 +61,21 @@ if ( ! is_dir(  __DIR__ . '/tests/phpunit/build/logs/' ) ) {
 \$php_modules = array(
 	'bcmath',
 	'curl',
+	'dom',
+	'exif',
 	'filter',
 	'gd',
+	'gettext',
+	'gmagick',
+	'iconv',
+	'imagick',
+	'intl',
 	'libsodium',
+	'libxml',
+	'mbstring',
 	'mcrypt',
 	'mod_xml',
 	'mysqli',
-	'imagick',
-	'gmagick',
 	'pcre',
 	'xml',
 	'xmlreader',
@@ -80,7 +87,6 @@ foreach( \$php_modules as \$php_module ) {
 \$curl_bits = explode( PHP_EOL, str_replace( 'curl ', '', shell_exec( 'curl --version' ) ) );
 \$curl = array_shift( \$curl_bits );
 \$env['system_utils']['curl'] = trim( \$curl );
-\$env['system_utils']['ghostscript'] = trim( shell_exec( 'gs --version' ) );
 if ( class_exists( 'Imagick' ) ) {
 	\$imagick = new Imagick();
 	\$version = \$imagick->getVersion();
