@@ -83,7 +83,7 @@ jobs:
         continue-on-error: true
 
       - name: Report the results
-        run: php report.php
-
+        run: php report.php || (sleep 60 && php report.php)
+        
       - name: Cleanup
         run: php cleanup.php
