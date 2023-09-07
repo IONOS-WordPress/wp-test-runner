@@ -35,7 +35,7 @@ jobs:
   # Performs the following steps:
   # - Checks out the repository.
   # - Installs PHP.
-  # - Installs NodeJS 14 with caching configured.
+  # - Installs NodeJS 16 with caching configured.
   # - Prepares the environment for tests.
   # - Runs the tests.
   # - Reports the results.
@@ -72,7 +72,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@25316bbc1f10ac9d8798711f44914b1cf3c4e954 # v2.4.0
         with:
-          node-version: 14
+          node-version: 16
 
       - name: Prepare environment
         run: php prepare.php
