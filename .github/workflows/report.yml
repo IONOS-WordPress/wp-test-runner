@@ -77,13 +77,13 @@ jobs:
       - name: Prepare environment
         run: php prepare.php
 
-      - name: Run unit tests
-        run: php test.php
+      - name: Run unit tests (twice if it produces an empty junit.xml)
+        run: php test.php || [ ! -s tests/phpunit/build/logs/junit.xml ] && php test.php
         # Prevent the workflow from stopping if there are test failures.
         continue-on-error: true
 
       - name: Report the results
-        run: php report.php || (sleep 60 && php report.php)
+        run: sleep 5 && ([ -s tests/phpunit/build/logs/junit.xml ] && php report.php)
         
       - name: Cleanup
         run: php cleanup.php
