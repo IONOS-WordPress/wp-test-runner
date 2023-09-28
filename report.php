@@ -23,7 +23,7 @@ log_message('Getting SVN message');
 $message = trim( exec('git --git-dir=' . escapeshellarg( $WPT_PREPARE_DIR ) . '/.git log -1 --pretty=%B | head -1') );
 
 log_message('Copying junit.xml results');
-$junit_location =  $WPT_TEST_DIR  . '/tests/phpunit/build/logs/*';
+$junit_location = escapeshellarg( $WPT_TEST_DIR ) . '/tests/phpunit/build/logs/*';
 
 if ( ! empty( $WPT_SSH_CONNECT ) ) {
 	$junit_location = '-e "ssh ' . $WPT_SSH_OPTIONS . '" ' . escapeshellarg( $WPT_SSH_CONNECT . ':' . $junit_location );
