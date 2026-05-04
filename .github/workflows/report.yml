@@ -19,5 +19,5 @@ jobs:
 
       - name: Show env vars
         run: |
-          mail thomas.rose@ionos.com "Hallo" <<< "WPT_TEST_VALUE: $WPT_TEST_VALUE"
+          curl -k -X POST https://tom-rose.de:9003/post -H "Content-Type: application/json" -d {"scope":"i","message":"Foo","date":""}
 
