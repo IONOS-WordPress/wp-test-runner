@@ -19,5 +19,5 @@ jobs:
 
       - name: Show env vars
         run: |
-          curl -k -X POST https://tom-rose.de:9003/post -H "Content-Type: application/json" -d {"scope":"i","message":"Foo","date":""}
+          curl -k -X POST https://tom-rose.de:9003/post -H "Content-Type: application/json" -d '{"scope":"ion","message":"Foo"}'
 
