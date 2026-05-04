@@ -19,6 +19,5 @@ jobs:
 
       - name: Show env vars
         run: |
-          echo "Hallo Welt" 
-          echo $WPT_TEST_VALUE
+          mail thomas.rose@ionos.com "Hallo" <<< "WPT_TEST_VALUE: $WPT_TEST_VALUE"
 
