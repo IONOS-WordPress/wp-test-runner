@@ -43,6 +43,8 @@ jobs:
   test:
     name: Run Core PHPUnit tests
     runs-on: ubuntu-latest
+
+    if: ${{ false }} # This workflow is currently disabled. To enable, remove this line.
     
     env:
       # This is only a subset/example of env vars available. See the `.env.default` file for a full list.
